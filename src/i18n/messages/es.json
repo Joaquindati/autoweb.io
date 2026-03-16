@@ -147,6 +147,28 @@
       "badge": "Optimizado ✓"
     }
   },
+  "panel": {
+    "navLabel": "Panel",
+    "heroEyebrow": "Tu Panel",
+    "heroTitle": "Todo Sobre tu Automatización en un Solo Lugar",
+    "heroDescription": "Un dashboard centralizado donde podés monitorear tus automatizaciones, seguir el progreso del proyecto y analizar resultados en tiempo real.",
+    "scenes": [
+      { "title": "Tu Panel Centralizado", "subtitle": "Visualizá el estado de todas tus automatizaciones en un solo lugar" },
+      { "title": "Monitoreo en Tiempo Real", "subtitle": "Cada automatización muestra su estado, última ejecución y rendimiento" },
+      { "title": "Seguimiento del Proyecto", "subtitle": "Sabé exactamente en qué fase está tu implementación y qué viene después" },
+      { "title": "Analítica Detallada", "subtitle": "Métricas de rendimiento, ahorro de tiempo y ROI en tiempo real" },
+      { "title": "Reportes Automáticos", "subtitle": "Recibí reportes periódicos en tu email o descargalos cuando los necesites" }
+    ],
+    "feature1Title": "Monitoreo en Vivo",
+    "feature1Desc": "Vé el estado de cada automatización, historial de ejecuciones y alertas de error en tiempo real.",
+    "feature2Title": "Analítica Visual",
+    "feature2Desc": "Gráficos interactivos mostrando tiempo ahorrado, ganancias de eficiencia y reducción de costos.",
+    "feature3Title": "Roadmap del Proyecto",
+    "feature3Desc": "Visibilidad clara del timeline de tu implementación con hitos y entregables.",
+    "feature4Title": "Reportes Programados",
+    "feature4Desc": "Reportes automáticos entregados a tu email semanal o mensualmente, más exportaciones on-demand.",
+    "cta": "Agendá una Demo del Panel"
+  },
   "metadata": {
     "title": "Autoweb | Servicios de Automatización Personalizada",
     "description": "Estudiamos tu operación, integramos soluciones a medida y analizamos los resultados. Automatización que realmente funciona para tu negocio."

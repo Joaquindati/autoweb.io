@@ -100,7 +100,7 @@ export default function HeroSection() {
               className="flex flex-wrap gap-4 mt-8"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button href="https://wa.me/543416446621" target="_blank" rel="noopener noreferrer" size="lg">
+                <Button href="https://wa.me/543416446621" size="lg">
                   {t("cta")} <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </motion.div>

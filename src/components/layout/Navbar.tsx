@@ -14,9 +14,10 @@ const NAV_HREFS = [
   "#pricing",
   "#faq",
   "#testimonials",
+  "panel",
 ];
 
-const NAV_KEYS = ["process", "about", "pricing", "faq", "testimonials"] as const;
+const NAV_KEYS = ["process", "about", "pricing", "faq", "testimonials", "panel"] as const;
 
 const LOCALES = [
   { code: "es", label: "ES" },
@@ -51,6 +52,7 @@ const mobileLinkVariants = {
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const tPanel = useTranslations("panel");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -97,23 +99,33 @@ export default function Navbar() {
         </motion.a>
 
         <div className="hidden lg:flex items-center gap-8">
-          {NAV_KEYS.map((key, i) => (
-            <motion.a
-              key={key}
-              href={NAV_HREFS[i]}
-              custom={i}
-              initial="hidden"
-              animate="visible"
-              variants={navLinkVariants}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                activeId === NAV_HREFS[i].replace("#", "")
-                  ? "text-primary"
-                  : "text-neutral-700"
-              }`}
-            >
-              {t(key)}
-            </motion.a>
-          ))}
+          {NAV_KEYS.map((key, i) => {
+            const href = NAV_HREFS[i];
+            const isPage = !href.startsWith("#");
+            const resolvedHref = isPage ? `/${locale}/${href}` : href;
+            const label = key === "panel" ? tPanel("navLabel") : t(key);
+            return (
+              <motion.a
+                key={key}
+                href={resolvedHref}
+                custom={i}
+                initial="hidden"
+                animate="visible"
+                variants={navLinkVariants}
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  isPage
+                    ? pathname.includes(`/${href}`)
+                      ? "text-primary"
+                      : "text-neutral-700"
+                    : activeId === href.replace("#", "")
+                      ? "text-primary"
+                      : "text-neutral-700"
+                }`}
+              >
+                {label}
+              </motion.a>
+            );
+          })}
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
@@ -145,7 +157,7 @@ export default function Navbar() {
             )}
           </div>
 
-          <Button href="https://wa.me/543416446621" target="_blank" rel="noopener noreferrer" size="sm">
+          <Button href="https://wa.me/543416446621" size="sm">
             {t("getStarted")}
           </Button>
         </div>
@@ -169,17 +181,23 @@ export default function Navbar() {
             exit="exit"
           >
             <div className="flex flex-col p-6 gap-4">
-              {NAV_KEYS.map((key, i) => (
+              {NAV_KEYS.map((key, i) => {
+                const href = NAV_HREFS[i];
+                const isPage = !href.startsWith("#");
+                const resolvedHref = isPage ? `/${locale}/${href}` : href;
+                const label = key === "panel" ? tPanel("navLabel") : t(key);
+                return (
                 <motion.a
                   key={key}
-                  href={NAV_HREFS[i]}
+                  href={resolvedHref}
                   onClick={() => setIsMobileOpen(false)}
                   className="text-lg font-medium text-neutral-700 hover:text-primary py-2"
                   variants={mobileLinkVariants}
                 >
-                  {t(key)}
+                  {label}
                 </motion.a>
-              ))}
+                );
+              })}
               <motion.div className="flex gap-2 mt-2" variants={mobileLinkVariants}>
                 {LOCALES.map((l) => (
                   <button
@@ -196,7 +214,7 @@ export default function Navbar() {
                 ))}
               </motion.div>
               <motion.div className="mt-4" variants={mobileLinkVariants}>
-                <Button href="https://wa.me/543416446621" target="_blank" rel="noopener noreferrer" className="w-full">
+                <Button href="https://wa.me/543416446621" className="w-full">
                   {t("getStarted")}
                 </Button>
               </motion.div>

@@ -147,6 +147,28 @@
       "badge": "Optimized ✓"
     }
   },
+  "panel": {
+    "navLabel": "Panel",
+    "heroEyebrow": "Your Panel",
+    "heroTitle": "Everything About Your Automation in One Place",
+    "heroDescription": "A centralized dashboard where you can monitor your automations, track project progress, and analyze results in real time.",
+    "scenes": [
+      { "title": "Your Centralized Panel", "subtitle": "View the status of all your automations in one place" },
+      { "title": "Real-time Monitoring", "subtitle": "Each automation shows its status, last run, and performance" },
+      { "title": "Project Tracking", "subtitle": "Know exactly what phase your implementation is in and what's next" },
+      { "title": "Detailed Analytics", "subtitle": "Performance metrics, time savings, and ROI in real time" },
+      { "title": "Automatic Reports", "subtitle": "Receive periodic reports by email or download them when you need" }
+    ],
+    "feature1Title": "Live Monitoring",
+    "feature1Desc": "See each automation's status, execution history, and error alerts in real time.",
+    "feature2Title": "Visual Analytics",
+    "feature2Desc": "Interactive charts showing time saved, efficiency gains, and cost reduction.",
+    "feature3Title": "Project Roadmap",
+    "feature3Desc": "Clear visibility of your implementation timeline with milestones and deliverables.",
+    "feature4Title": "Scheduled Reports",
+    "feature4Desc": "Automated reports delivered to your inbox weekly or monthly, plus on-demand exports.",
+    "cta": "Book a Panel Demo"
+  },
   "metadata": {
     "title": "Autoweb | Custom Automation Services",
     "description": "We study your operation, integrate custom solutions and analyze the results. Automation that truly works for your business."
