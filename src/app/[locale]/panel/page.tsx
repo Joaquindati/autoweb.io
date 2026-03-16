@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import { Player } from "@remotion/player";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { Activity, BarChart3, Map, FileText, ArrowRight } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
@@ -24,6 +24,7 @@ const features = [
 
 export default function PanelPage() {
   const t = useTranslations("panel");
+  const locale = useLocale();
 
   const inputProps = useMemo(
     () => ({
@@ -63,6 +64,16 @@ export default function PanelPage() {
             >
               {t("heroDescription")}
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-8"
+            >
+              <Button href={`/${locale}/dashboard`} size="lg">
+                {t("demoBtn")} <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </motion.div>
           </div>
         </section>
 
