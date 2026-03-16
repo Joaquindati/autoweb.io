@@ -379,146 +379,106 @@ export default function PanelTourAnimation({ scenes: scenesProp }: PanelTourProp
       {/* === SCENE 4: Analytics Dashboard (frames 360-480) === */}
       {frame >= 360 && frame < 480 && (() => {
         const localFrame = frame - 360;
-        const contentX = 270;
-        const contentY = 125;
+        const cx = 270;
+        const cy = 125;
 
-        // Bar chart data
+        // === TOP LEFT: Bar chart ===
         const barData = [85, 120, 65, 145, 95, 160];
-        const barW = 50;
-        const barGap = 18;
-        const barBaseY = contentY + 300;
-        const maxBarH = 180;
+        const barW = 38;
+        const barGap = 12;
+        const barBaseY = cy + 240;
+        const maxBarH = 140;
 
-        // Line chart points
-        const lineChartPoints = [
-          [0, 60], [1, 45], [2, 70], [3, 30], [4, 50], [5, 15], [6, 25],
-        ];
-        const lcX = contentX + 450;
-        const lcY = contentY + 20;
-        const lcW = 380;
-        const lcH = 130;
+        // === TOP RIGHT: Line chart ===
+        const lineChartPoints = [[0, 60], [1, 45], [2, 70], [3, 30], [4, 50], [5, 15], [6, 25]];
+        const lcX = cx + 440;
+        const lcY = cy + 10;
+        const lcW = 390;
+        const lcH = 230;
+        const lineProgress = interpolate(localFrame, [15, 80], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
-        // Donut chart
-        const donutCx = contentX + 620;
-        const donutCy = contentY + 280;
-        const donutR = 65;
+        // === BOTTOM LEFT: Donut chart ===
+        const donutCx = cx + 160;
+        const donutCy = cy + 370;
+        const donutR = 55;
         const donutAngle = interpolate(localFrame, [30, 100], [0, 270], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
         const donutRad = (donutAngle * Math.PI) / 180;
         const donutEndX = donutCx + donutR * Math.sin(donutRad);
         const donutEndY = donutCy - donutR * Math.cos(donutRad);
         const largeArc = donutAngle > 180 ? 1 : 0;
-        const donutPath =
-          donutAngle > 0
-            ? `M ${donutCx} ${donutCy - donutR} A ${donutR} ${donutR} 0 ${largeArc} 1 ${donutEndX} ${donutEndY}`
-            : "";
+        const donutPath = donutAngle > 0
+          ? `M ${donutCx} ${donutCy - donutR} A ${donutR} ${donutR} 0 ${largeArc} 1 ${donutEndX} ${donutEndY}`
+          : "";
 
-        // KPI counters
+        // === BOTTOM RIGHT: KPI cards ===
         const kpiEfficiency = Math.round(interpolate(localFrame, [40, 90], [0, 42], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
         const kpiTime = Math.round(interpolate(localFrame, [50, 95], [0, 65], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
         const kpiRoi = (interpolate(localFrame, [60, 100], [0, 3.2], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })).toFixed(1);
 
-        // Line chart draw progress
-        const lineProgress = interpolate(localFrame, [15, 80], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-
         return (
           <g opacity={textOpacity(frame, 360, 120)}>
-            {/* Bar chart */}
+            {/* TOP LEFT: Bar chart */}
+            <text x={cx + 20} y={cy + 10} fontSize={14} fontWeight={600} fill="#334155">Monthly</text>
             {barData.map((val, i) => {
               const s = sp(i * 10 + 5, 25);
               const bh = (val / 160) * maxBarH * s;
-              const bx = contentX + 20 + i * (barW + barGap);
+              const bx = cx + 20 + i * (barW + barGap);
               return (
                 <g key={`bar-${i}`}>
-                  <rect
-                    x={bx}
-                    y={barBaseY - bh}
-                    width={barW}
-                    height={bh}
-                    rx={6}
-                    fill="#22c55e"
-                    opacity={0.7 + 0.3 * (i / barData.length)}
-                  />
-                  {/* Bar label */}
-                  <text x={bx + barW / 2} y={barBaseY + 18} textAnchor="middle" fontSize={11} fill="#64748b">
+                  <rect x={bx} y={barBaseY - bh} width={barW} height={bh} rx={5} fill="#22c55e" opacity={0.5 + 0.5 * (i / barData.length)} />
+                  <text x={bx + barW / 2} y={barBaseY + 16} textAnchor="middle" fontSize={11} fill="#64748b">
                     {["Jan", "Feb", "Mar", "Apr", "May", "Jun"][i]}
                   </text>
                 </g>
               );
             })}
-            {/* Bar chart axis */}
-            <line x1={contentX + 12} y1={barBaseY + 2} x2={contentX + 420} y2={barBaseY + 2} stroke="#e2e8f0" strokeWidth={1} />
+            <line x1={cx + 15} y1={barBaseY + 2} x2={cx + 330} y2={barBaseY + 2} stroke="#e2e8f0" strokeWidth={1} />
 
-            {/* Line chart area */}
+            {/* TOP RIGHT: Line chart */}
+            <text x={lcX + 15} y={lcY - 6} fontSize={14} fontWeight={600} fill="#334155">Trend</text>
             <rect x={lcX} y={lcY} width={lcW} height={lcH} rx={12} fill="white" stroke="#e2e8f0" strokeWidth={0.5} />
-            {/* Grid lines */}
             {[0.25, 0.5, 0.75].map((pct, gi) => (
-              <line
-                key={`grid-${gi}`}
-                x1={lcX + 15}
-                y1={lcY + lcH * pct}
-                x2={lcX + lcW - 15}
-                y2={lcY + lcH * pct}
-                stroke="#e2e8f0"
-                strokeWidth={0.5}
-              />
+              <line key={`grid-${gi}`} x1={lcX + 15} y1={lcY + lcH * pct} x2={lcX + lcW - 15} y2={lcY + lcH * pct} stroke="#e2e8f0" strokeWidth={0.5} />
             ))}
-            {/* Line chart polyline */}
             {lineProgress > 0 && (
               <polyline
                 points={lineChartPoints
                   .filter((_, idx) => idx <= Math.floor(lineProgress * (lineChartPoints.length - 1)))
-                  .map(([xi, yi]) => `${lcX + 25 + (xi as number) * ((lcW - 50) / 6)},${lcY + 15 + ((yi as number) / 80) * (lcH - 30)}`)
+                  .map(([xi, yi]) => `${lcX + 25 + (xi as number) * ((lcW - 50) / 6)},${lcY + 20 + ((yi as number) / 80) * (lcH - 40)}`)
                   .join(" ")}
-                fill="none"
-                stroke="#22c55e"
-                strokeWidth={2.5}
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                fill="none" stroke="#22c55e" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"
               />
             )}
-            {/* Line chart dots */}
             {lineChartPoints.map(([xi, yi], di) => {
-              const dotProgress = interpolate(localFrame, [15 + di * 9, 20 + di * 9], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-              if (dotProgress <= 0) return null;
-              return (
-                <circle
-                  key={`dot-${di}`}
-                  cx={lcX + 25 + (xi as number) * ((lcW - 50) / 6)}
-                  cy={lcY + 15 + ((yi as number) / 80) * (lcH - 30)}
-                  r={4 * dotProgress}
-                  fill="#22c55e"
-                />
-              );
+              const dp = interpolate(localFrame, [15 + di * 9, 20 + di * 9], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+              return dp > 0 ? (
+                <circle key={`dot-${di}`} cx={lcX + 25 + (xi as number) * ((lcW - 50) / 6)} cy={lcY + 20 + ((yi as number) / 80) * (lcH - 40)} r={4 * dp} fill="#22c55e" />
+              ) : null;
             })}
-            <text x={lcX + 15} y={lcY - 8} fontSize={14} fontWeight={600} fill="#334155">Trend</text>
 
-            {/* Donut chart */}
-            <circle cx={donutCx} cy={donutCy} r={donutR} fill="none" stroke="#e2e8f0" strokeWidth={14} />
+            {/* BOTTOM LEFT: Donut chart */}
+            <circle cx={donutCx} cy={donutCy} r={donutR} fill="none" stroke="#e2e8f0" strokeWidth={12} />
             {donutAngle > 0 && (
-              <path
-                d={donutPath}
-                fill="none"
-                stroke="#22c55e"
-                strokeWidth={14}
-                strokeLinecap="round"
-              />
+              <path d={donutPath} fill="none" stroke="#22c55e" strokeWidth={12} strokeLinecap="round" />
             )}
-            <text x={donutCx} y={donutCy + 6} textAnchor="middle" fontSize={24} fontWeight={700} fill="#0f172a">
+            <text x={donutCx} y={donutCy + 6} textAnchor="middle" fontSize={22} fontWeight={700} fill="#0f172a">
               {Math.round((donutAngle / 360) * 100)}%
             </text>
-            <text x={donutCx} y={donutCy + 24} textAnchor="middle" fontSize={12} fill="#64748b">Success</text>
+            <text x={donutCx} y={donutCy + 22} textAnchor="middle" fontSize={11} fill="#64748b">Success</text>
 
-            {/* KPI text values */}
+            {/* BOTTOM RIGHT: KPI cards */}
             {[
-              { label: "Efficiency", value: `+${kpiEfficiency}%`, x: contentX + 470, y: contentY + 290 },
-              { label: "Time Saved", value: `-${kpiTime}%`, x: contentX + 470, y: contentY + 330 },
-              { label: "ROI", value: `${kpiRoi}x`, x: contentX + 470, y: contentY + 370 },
+              { label: "Efficiency", value: `+${kpiEfficiency}%`, y: cy + 310 },
+              { label: "Time Saved", value: `-${kpiTime}%`, y: cy + 360 },
+              { label: "ROI", value: `${kpiRoi}x`, y: cy + 410 },
             ].map((kpi, ki) => {
               const kOp = interpolate(localFrame, [40 + ki * 12, 55 + ki * 12], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+              const kx = cx + 480;
               return (
                 <g key={`akpi-${ki}`} opacity={kOp}>
-                  <text x={kpi.x} y={kpi.y} fontSize={14} fill="#64748b">{kpi.label}</text>
-                  <text x={kpi.x + 110} y={kpi.y} fontSize={18} fontWeight={700} fill="#22c55e">{kpi.value}</text>
+                  <rect x={kx - 10} y={kpi.y - 22} width={370} height={42} rx={10} fill="white" stroke="#e2e8f0" strokeWidth={0.5} />
+                  <text x={kx + 10} y={kpi.y} fontSize={14} fill="#64748b">{kpi.label}</text>
+                  <text x={kx + 300} y={kpi.y} textAnchor="end" fontSize={20} fontWeight={700} fill="#22c55e">{kpi.value}</text>
                 </g>
               );
             })}
