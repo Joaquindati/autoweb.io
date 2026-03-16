@@ -32,7 +32,7 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
       <div>
         <div className="flex items-center gap-2 px-6 py-6">
           <span className="h-3 w-3 rounded-full bg-primary" />
-          <span className="text-lg font-bold font-heading text-white">Autoweb</span>
+          <span className="text-lg font-bold font-heading text-white">Automatik</span>
         </div>
         <nav className="mt-4 flex flex-col gap-1 px-3">
           {navLinks.map((link) => {
@@ -94,7 +94,7 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
           <button onClick={() => setSidebarOpen(true)} className="rounded-xl border border-neutral-200 bg-white p-2 shadow-sm">
             <Menu className="h-5 w-5 text-neutral-700" />
           </button>
-          <span className="text-lg font-bold text-neutral-900">Autoweb</span>
+          <span className="text-lg font-bold text-neutral-900">Automatik</span>
         </div>
         <div className="p-8">{children}</div>
       </main>

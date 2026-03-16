@@ -184,7 +184,7 @@ export const pricingTiers: PricingTier[] = [
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Autoweb automated our entire onboarding pipeline. What used to take 3 hours now takes 10 minutes.",
+      "Automatik automated our entire onboarding pipeline. What used to take 3 hours now takes 10 minutes.",
     name: "Sarah Mitchell",
     role: "COO",
     company: "Greenleaf Logistics",

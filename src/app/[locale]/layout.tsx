@@ -58,9 +58,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Autoweb",
+    name: "Automatik",
     description: "Automation and reporting solutions for modern businesses.",
-    url: "https://autoweb.agency",
+    url: "https://automatik.app",
   };
 
   return (

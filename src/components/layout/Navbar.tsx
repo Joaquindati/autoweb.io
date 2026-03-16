@@ -95,7 +95,7 @@ export default function Navbar() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          Autoweb<span className="text-primary">.</span>
+          Automatik<span className="text-primary">.</span>
         </motion.a>
 
         <div className="hidden lg:flex items-center gap-8">

@@ -1,10 +1,10 @@
 import type { NavLink } from "@/types";
 
-export const SITE_NAME = "Autoweb";
+export const SITE_NAME = "Automatik";
 export const SITE_TAGLINE = "Automatización Personalizada para Empresas";
 export const SITE_DESCRIPTION =
   "Estudiamos tu operación, integramos soluciones a medida y analizamos los resultados. Automatización que realmente funciona para tu negocio.";
-export const SITE_URL = "https://autoweb.agency";
+export const SITE_URL = "https://automatik.app";
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Proceso", href: "#process-study" },

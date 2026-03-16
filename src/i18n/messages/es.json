@@ -138,7 +138,7 @@
     },
     "integrate": {
       "platforms": ["CRM", "Email", "Base Datos", "API", "Calendario", "Slack", "ERP", "Sheets"],
-      "hubLabel": "AUTOWEB",
+      "hubLabel": "AUTOMATIK",
       "badge": "Todo Conectado ✓"
     },
     "analyze": {
@@ -215,7 +215,7 @@
     "daysAgo": "días atrás"
   },
   "metadata": {
-    "title": "Autoweb | Servicios de Automatización Personalizada",
+    "title": "Automatik | Servicios de Automatización Personalizada",
     "description": "Estudiamos tu operación, integramos soluciones a medida y analizamos los resultados. Automatización que realmente funciona para tu negocio."
   }
 }
