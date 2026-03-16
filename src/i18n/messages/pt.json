@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "process": "Processo",
+    "about": "Sobre Nós",
+    "pricing": "Preços",
+    "faq": "FAQ",
+    "testimonials": "Depoimentos",
+    "getStarted": "Começar"
+  },
+  "hero": {
+    "eyebrow": "Automação Personalizada",
+    "headingWords": "Automatizamos os Processos da sua Empresa",
+    "highlight": "do Início ao Fim",
+    "description": "Estudamos sua operação, integramos soluções sob medida e analisamos os resultados. Automação que realmente funciona para o seu negócio.",
+    "cta": "Agende uma Consulta",
+    "ctaSecondary": "Ver Nosso Processo",
+    "trust": "Confiança de",
+    "trustSuffix": "empresas automatizadas"
+  },
+  "steps": {
+    "step1": {
+      "eyebrow": "Passo 01",
+      "title": "Estudamos seu Problema a Fundo",
+      "description": "Antes de escrever uma única linha de código, mergulhamos na sua operação. Analisamos seus workflows atuais, identificamos gargalos e mapeamos cada processo manual que consome tempo e recursos da sua equipe.",
+      "bullets": [
+        "Auditoria completa de workflows existentes",
+        "Identificação de tarefas repetitivas e manuais",
+        "Mapeamento de integrações atuais e lacunas",
+        "Relatório detalhado com oportunidades de automação"
+      ]
+    },
+    "step2": {
+      "eyebrow": "Passo 02",
+      "title": "Integramos Soluções sob Medida",
+      "description": "Projetamos e implementamos automações personalizadas que conectam suas ferramentas existentes. Não usamos templates genéricos — cada solução é construída especificamente para resolver seus problemas identificados.",
+      "bullets": [
+        "Automações custom adaptadas ao seu stack",
+        "Integração com CRM, ERP, email e mais",
+        "Testes exaustivos antes da produção",
+        "Implementação sem interromper sua operação"
+      ]
+    },
+    "step3": {
+      "eyebrow": "Passo 03",
+      "title": "Analisamos e Otimizamos seus Resultados",
+      "description": "Não vamos embora após a implementação. Medimos o impacto real de cada automação com dashboards em tempo real, identificamos novas oportunidades de melhoria e otimizamos continuamente para maximizar seu ROI.",
+      "bullets": [
+        "Dashboards de desempenho em tempo real",
+        "Relatórios mensais de ROI e eficiência",
+        "Otimização contínua baseada em dados",
+        "Suporte dedicado e escalamento proativo"
+      ]
+    }
+  },
+  "whyUs": {
+    "eyebrow": "Por Que Nos Escolher",
+    "heading": "Construímos Soluções que Trabalham Enquanto Você Dorme",
+    "p1": "Nossa equipe combina expertise técnica profunda com uma mentalidade orientada ao negócio. Não apenas construímos automações — projetamos sistemas que entregam ROI mensurável e escalam com seu crescimento.",
+    "p2": "Cada solução é adaptada aos seus workflows específicos, garantindo integração perfeita com suas ferramentas e processos existentes.",
+    "stat1Label": "uptime de automação",
+    "stat2Prefix": "Média de",
+    "stat2Label": "economia de tempo para clientes",
+    "stat3Label": "Suporte dedicado e manutenção",
+    "svgRevenue": "Receita",
+    "svgEfficiency": "Eficiência",
+    "feature1Title": "Implementação Rápida",
+    "feature1Desc": "Em produção em semanas, não meses. Nossos frameworks aceleram a implantação.",
+    "feature2Title": "Confiabilidade Enterprise",
+    "feature2Desc": "Construído com redundância e monitoramento. Suas automações nunca falham.",
+    "feature3Title": "Resultados Mensuráveis",
+    "feature3Desc": "Cada solução inclui analytics para que você possa rastrear o ROI desde o primeiro dia."
+  },
+  "pricing": {
+    "eyebrow": "Preços",
+    "heading": "Planos Transparentes para Cada Empresa",
+    "subheading": "Comece com uma consulta gratuita. Sem custos ocultos.",
+    "monthly": "Mensal",
+    "yearly": "Anual",
+    "save": "Economize 20%",
+    "starter": "Starter",
+    "starterTagline": "Para equipes pequenas começando",
+    "professional": "Professional",
+    "professionalTagline": "Para empresas em crescimento",
+    "enterprise": "Enterprise",
+    "enterpriseTagline": "Para organizações em escala",
+    "mostPopular": "Mais Popular",
+    "getStarted": "Começar",
+    "contactUs": "Fale Conosco",
+    "starterFeatures": ["Até 3 workflows automatizados", "1 dashboard personalizado", "Suporte por email", "Relatórios mensais", "Integrações básicas"],
+    "professionalFeatures": ["Até 10 workflows", "5 dashboards personalizados", "Suporte prioritário", "Relatórios semanais", "Integrações custom", "Acesso API"],
+    "enterpriseFeatures": ["Workflows ilimitados", "Dashboards ilimitados", "Suporte dedicado 24/7", "Relatórios em tempo real", "Soluções BI custom", "Account manager dedicado"]
+  },
+  "testimonials": {
+    "eyebrow": "Depoimentos",
+    "heading": "O Que Nossos Clientes Dizem",
+    "subheading": "Não acredite apenas em nós — ouça as empresas que ajudamos a transformar"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "heading": "Perguntas Frequentes",
+    "description": "Tem perguntas? Temos respostas. Se não encontrar o que procura, entre em contato com nossa equipe.",
+    "contactCta": "Contatar nossa equipe",
+    "q1": "Que tipos de processos vocês podem automatizar?",
+    "a1": "Automatizamos uma ampla gama de processos empresariais: entrada de dados, workflows de email, atualizações de CRM, processamento de faturas, onboarding de funcionários, geração de relatórios e integrações entre plataformas. Se é repetitivo e baseado em regras, provavelmente podemos automatizá-lo.",
+    "q2": "Quanto tempo leva uma implementação típica?",
+    "a2": "A maioria dos projetos vai da descoberta ao lançamento em 2-6 semanas dependendo da complexidade. Automações simples podem estar ativas em dias, enquanto soluções abrangentes de BI podem levar 4-8 semanas.",
+    "q3": "Vocês integram com nossas ferramentas atuais?",
+    "a3": "Sim. Trabalhamos com todas as principais plataformas incluindo Salesforce, HubSpot, Slack, Google Workspace, Microsoft 365, Zapier, Make, APIs personalizadas e centenas mais.",
+    "q4": "O que acontece após o lançamento?",
+    "a4": "Cada plano inclui monitoramento e suporte contínuo. Identificamos problemas proativamente, otimizamos o desempenho e escalamos suas soluções à medida que seu negócio cresce.",
+    "q5": "Posso ver uma demo antes de contratar?",
+    "a5": "Com certeza. Oferecemos uma consulta e demo gratuita. Avaliaremos suas necessidades e mostraremos exatamente o que podemos construir, sem compromisso."
+  },
+  "cta": {
+    "heading": "Pronto para Automatizar sua Empresa?",
+    "description": "Agende uma consulta gratuita e descubra como podemos economizar 40+ horas por mês.",
+    "button": "Obtenha sua Consulta Gratuita",
+    "disclaimer": "Sem compromisso. Montaremos uma proposta personalizada para você."
+  },
+  "footer": {
+    "tagline": "Soluções de automação e relatórios para empresas modernas. Ajudamos você a trabalhar de forma mais inteligente, não mais difícil.",
+    "servicesTitle": "Serviços",
+    "companyTitle": "Empresa",
+    "legalTitle": "Legal",
+    "copyright": "Todos os direitos reservados.",
+    "services": ["Auditoria de Processos", "Workflow Automation", "Integrações Custom", "Dashboards & Relatórios", "Otimização Contínua", "Suporte Dedicado"],
+    "company": ["Sobre Nós", "Processo", "Preços", "FAQ", "Contato"],
+    "legal": ["Política de Privacidade", "Termos de Serviço", "Política de Cookies"],
+    "privacyPolicy": "Política de Privacidade",
+    "termsConditions": "Termos e Condições"
+  },
+  "animations": {
+    "study": {
+      "nodes": ["Entrada", "Processo", "Revisão", "Saída"],
+      "issuesTitle": "Problemas Encontrados",
+      "issues": ["Entrada manual de dados", "Gargalo detectado", "Integração ausente", "Etapas redundantes"],
+      "badge": "Auditoria Completa"
+    },
+    "integrate": {
+      "platforms": ["CRM", "Email", "Banco de Dados", "API", "Calendário"],
+      "hubLabel": "AUTOWEB",
+      "badge": "Tudo Conectado ✓"
+    },
+    "analyze": {
+      "dashboardTitle": "Painel de Desempenho",
+      "kpis": ["Eficiência", "Tempo Manual", "ROI", "Uptime"],
+      "badge": "Otimizado ✓"
+    }
+  },
+  "metadata": {
+    "title": "Autoweb | Serviços de Automação Personalizada",
+    "description": "Estudamos sua operação, integramos soluções sob medida e analisamos os resultados. Automação que realmente funciona para o seu negócio."
+  }
+}

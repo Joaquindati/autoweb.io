@@ -1,5 +1,5 @@
 {
-  "name": "autoweb-temp",
+  "name": "autoweb",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +9,15 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@remotion/cli": "4.0.435",
+    "@remotion/player": "4.0.435",
+    "framer-motion": "^12.37.0",
+    "lucide-react": "^0.577.0",
     "next": "16.1.6",
+    "next-intl": "^4.8.3",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "remotion": "4.0.435"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

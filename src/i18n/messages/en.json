@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "process": "Process",
+    "about": "About Us",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "testimonials": "Testimonials",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "eyebrow": "Custom Automation",
+    "headingWords": "We Automate Your Company's Processes",
+    "highlight": "End to End",
+    "description": "We study your operation, integrate custom solutions and analyze the results. Automation that truly works for your business.",
+    "cta": "Book a Consultation",
+    "ctaSecondary": "See Our Process",
+    "trust": "Trusted by",
+    "trustSuffix": "businesses automated"
+  },
+  "steps": {
+    "step1": {
+      "eyebrow": "Step 01",
+      "title": "We Study Your Problem in Depth",
+      "description": "Before writing a single line of code, we dive into your operation. We analyze your current workflows, identify bottlenecks, and map every manual process that consumes your team's time and resources.",
+      "bullets": [
+        "Complete audit of existing workflows",
+        "Identification of repetitive and manual tasks",
+        "Mapping of current integrations and gaps",
+        "Detailed report with automation opportunities"
+      ]
+    },
+    "step2": {
+      "eyebrow": "Step 02",
+      "title": "We Integrate Custom Solutions",
+      "description": "We design and implement custom automations that connect your existing tools. We don't use generic templates — each solution is built specifically to solve your identified problems.",
+      "bullets": [
+        "Custom automations adapted to your stack",
+        "Integration with CRM, ERP, email and more",
+        "Exhaustive testing before production",
+        "Implementation without disrupting your operation"
+      ]
+    },
+    "step3": {
+      "eyebrow": "Step 03",
+      "title": "We Analyze and Optimize Your Results",
+      "description": "We don't leave after implementation. We measure the real impact of each automation with real-time dashboards, identify new improvement opportunities, and continuously optimize to maximize your ROI.",
+      "bullets": [
+        "Real-time performance dashboards",
+        "Monthly ROI and efficiency reports",
+        "Continuous data-driven optimization",
+        "Dedicated support and proactive scaling"
+      ]
+    }
+  },
+  "whyUs": {
+    "eyebrow": "Why Choose Us",
+    "heading": "We Build Solutions That Work While You Sleep",
+    "p1": "Our team combines deep technical expertise with a business-first mindset. We don't just build automations — we engineer systems that deliver measurable ROI and scale with your growth.",
+    "p2": "Every solution is tailored to your specific workflows, ensuring seamless integration with your existing tools and processes.",
+    "stat1Label": "automation uptime",
+    "stat2Prefix": "Average",
+    "stat2Label": "time savings for clients",
+    "stat3Label": "Dedicated support & maintenance",
+    "svgRevenue": "Revenue",
+    "svgEfficiency": "Efficiency",
+    "feature1Title": "Fast Implementation",
+    "feature1Desc": "Go live in weeks, not months. Our proven frameworks accelerate deployment.",
+    "feature2Title": "Enterprise Reliability",
+    "feature2Desc": "Built with redundancy and monitoring. Your automations never miss a beat.",
+    "feature3Title": "Measurable Results",
+    "feature3Desc": "Every solution comes with analytics so you can track ROI from day one."
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "heading": "Transparent Plans for Every Business",
+    "subheading": "Start with a free consultation. No hidden fees.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save": "Save 20%",
+    "starter": "Starter",
+    "starterTagline": "For small teams getting started",
+    "professional": "Professional",
+    "professionalTagline": "For growing businesses",
+    "enterprise": "Enterprise",
+    "enterpriseTagline": "For organizations at scale",
+    "mostPopular": "Most Popular",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "starterFeatures": ["Up to 3 automated workflows", "1 custom dashboard", "Email support", "Monthly reporting", "Basic integrations"],
+    "professionalFeatures": ["Up to 10 workflows", "5 custom dashboards", "Priority support", "Weekly reporting", "Custom integrations", "API access"],
+    "enterpriseFeatures": ["Unlimited workflows", "Unlimited dashboards", "24/7 dedicated support", "Real-time reporting", "Custom BI solutions", "Dedicated account manager"]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "heading": "See What Others Are Saying",
+    "subheading": "Don't just take our word for it — hear from businesses we've helped transform"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "heading": "Frequently Asked Questions",
+    "description": "Have questions? We have answers. If you don't see what you're looking for, reach out to our team.",
+    "contactCta": "Contact our team",
+    "q1": "What types of processes can you automate?",
+    "a1": "We automate a wide range of business processes including data entry, email workflows, CRM updates, invoice processing, employee onboarding, report generation, and cross-platform integrations. If it's repetitive and rule-based, we can likely automate it.",
+    "q2": "How long does a typical implementation take?",
+    "a2": "Most projects go from discovery to launch in 2-6 weeks depending on complexity. Simple automations can be live within days, while comprehensive BI solutions may take 4-8 weeks.",
+    "q3": "Do you integrate with our existing tools?",
+    "a3": "Yes. We work with all major platforms including Salesforce, HubSpot, Slack, Google Workspace, Microsoft 365, Zapier, Make, custom APIs, and hundreds more.",
+    "q4": "What happens after launch?",
+    "a4": "Every plan includes ongoing monitoring and support. We proactively identify issues, optimize performance, and scale your solutions as your business grows.",
+    "q5": "Can I see a demo before committing?",
+    "a5": "Absolutely. We offer a free consultation and demo. We'll assess your needs and show you exactly what we can build, with no obligation."
+  },
+  "cta": {
+    "heading": "Ready to Automate Your Business?",
+    "description": "Book a free consultation and see how we can save you 40+ hours a month.",
+    "button": "Get Your Free Consultation",
+    "disclaimer": "No commitment required. We'll build a custom proposal for you."
+  },
+  "footer": {
+    "tagline": "Automation and reporting solutions for modern businesses. We help you work smarter, not harder.",
+    "servicesTitle": "Services",
+    "companyTitle": "Company",
+    "legalTitle": "Legal",
+    "copyright": "All rights reserved.",
+    "services": ["Process Audit", "Workflow Automation", "Custom Integrations", "Dashboards & Reports", "Continuous Optimization", "Dedicated Support"],
+    "company": ["About Us", "Process", "Pricing", "FAQ", "Contact"],
+    "legal": ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions"
+  },
+  "animations": {
+    "study": {
+      "nodes": ["Intake", "Process", "Review", "Output"],
+      "issuesTitle": "Issues Found",
+      "issues": ["Manual data entry", "Bottleneck detected", "Missing integration", "Redundant steps"],
+      "badge": "Audit Complete"
+    },
+    "integrate": {
+      "platforms": ["CRM", "Email", "Database", "API", "Calendar"],
+      "hubLabel": "AUTOWEB",
+      "badge": "All Connected ✓"
+    },
+    "analyze": {
+      "dashboardTitle": "Performance Dashboard",
+      "kpis": ["Efficiency", "Manual Time", "ROI", "Uptime"],
+      "badge": "Optimized ✓"
+    }
+  },
+  "metadata": {
+    "title": "Autoweb | Custom Automation Services",
+    "description": "We study your operation, integrate custom solutions and analyze the results. Automation that truly works for your business."
+  }
+}
