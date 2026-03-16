@@ -189,10 +189,10 @@ export default function StudyAnimation({
 
         {/* Checklist panel */}
         {frame > 60 && (
-          <g transform="translate(620, 220)">
+          <g transform="translate(580, 220)">
             <rect
-              width="300"
-              height={260}
+              width="360"
+              height={280}
               rx="18"
               fill="white"
               stroke="#e2e8f0"
@@ -267,12 +267,12 @@ export default function StudyAnimation({
         {/* Report badge */}
         {frame > 110 && (
           <g
-            transform={`translate(480, 480) scale(${Math.min(reportScale, 1)})`}
+            transform={`translate(480, 550) scale(${Math.min(reportScale, 1)})`}
           >
             <rect
-              x="-140"
+              x="-180"
               y="-32"
-              width="280"
+              width="360"
               height="64"
               rx="32"
               fill="#22c55e"
