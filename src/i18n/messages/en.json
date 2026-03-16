@@ -137,7 +137,7 @@
       "badge": "Audit Complete"
     },
     "integrate": {
-      "platforms": ["CRM", "Email", "Database", "API", "Calendar"],
+      "platforms": ["CRM", "Email", "Database", "API", "Calendar", "Slack", "ERP", "Sheets"],
       "hubLabel": "AUTOWEB",
       "badge": "All Connected ✓"
     },

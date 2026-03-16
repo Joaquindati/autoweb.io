@@ -47,7 +47,7 @@ export default function FAQSection() {
               {t("description")}
             </p>
             <motion.a
-              href="#contact"
+              href="https://wa.me/543416446621" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center text-primary font-medium gap-2 group"
               whileHover={{ x: 4 }}
               transition={{ duration: 0.2 }}

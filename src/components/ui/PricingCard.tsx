@@ -98,7 +98,7 @@ export default function PricingCard({
           </motion.li>
         ))}
       </ul>
-      <Button variant={ctaVariant} href="#contact" className="w-full">
+      <Button variant={ctaVariant} href="https://wa.me/543416446621" target="_blank" rel="noopener noreferrer" className="w-full">
         {ctaText}
       </Button>
     </motion.div>

@@ -4,7 +4,7 @@ import { Linkedin, Twitter, Instagram } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { SITE_NAME } from "@/lib/constants";
 
-const companyHrefs = ["#about", "#process-study", "#pricing", "#faq", "#contact"];
+const companyHrefs = ["#about", "#process-study", "#pricing", "#faq", "https://wa.me/543416446621"];
 
 export default function Footer() {
   const t = useTranslations("footer");

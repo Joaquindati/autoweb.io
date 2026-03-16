@@ -28,7 +28,7 @@ export const FOOTER_COMPANY = [
   { label: "Proceso", href: "#process-study" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
-  { label: "Contacto", href: "#contact" },
+  { label: "Contacto", href: "https://wa.me/543416446621" },
 ];
 
 export const FOOTER_LEGAL = [

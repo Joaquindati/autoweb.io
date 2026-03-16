@@ -1,31 +1,38 @@
 import { useCurrentFrame, useVideoConfig, interpolate, spring } from "remotion";
 
 interface IntegrateProps {
-  platforms?: { label: string; icon: string }[];
+  platforms?: string[];
   hubLabel?: string;
   badge?: string;
 }
 
-const defaultPlatforms = [
-  { label: "CRM", icon: "\u{1F4CA}" },
-  { label: "Email", icon: "\u{1F4E7}" },
-  { label: "Database", icon: "\u{1F5C4}\uFE0F" },
-  { label: "API", icon: "\u{1F517}" },
-  { label: "Calendar", icon: "\u{1F4C5}" },
-];
+const defaultPlatforms = ["CRM", "Email", "Database", "API", "Calendar", "Slack", "ERP", "Sheets"];
 
-const platformPositions = [
-  { x: 160, y: 100, finalX: 220, finalY: 140 },
-  { x: 740, y: 80, finalX: 660, finalY: 140 },
-  { x: 140, y: 440, finalX: 220, finalY: 380 },
-  { x: 760, y: 420, finalX: 660, finalY: 380 },
-  { x: 460, y: 480, finalX: 440, finalY: 440 },
-];
+// 8 nodes distributed in a circle around center (480, 280), radius ~200
+const HUB_X = 480;
+const HUB_Y = 280;
+const RADIUS = 195;
+const NODE_W = 110;
+const NODE_H = 50;
 
-const HUB_X = 440;
-const HUB_Y = 270;
-const NODE_W = 120;
-const NODE_H = 80;
+// Calculate circular positions for final state
+const angles = Array.from({ length: 8 }, (_, i) => (i * Math.PI * 2) / 8 - Math.PI / 2);
+const finalPositions = angles.map((a) => ({
+  x: HUB_X + Math.cos(a) * RADIUS - NODE_W / 2,
+  y: HUB_Y + Math.sin(a) * RADIUS - NODE_H / 2,
+}));
+
+// Scattered initial positions (spread across the viewBox)
+const initialPositions = [
+  { x: 60, y: 30 },
+  { x: 750, y: 20 },
+  { x: 820, y: 280 },
+  { x: 780, y: 500 },
+  { x: 400, y: 530 },
+  { x: 80, y: 510 },
+  { x: 20, y: 280 },
+  { x: 120, y: 80 },
+];
 
 export default function IntegrateAnimation({
   platforms: platformLabels = defaultPlatforms,
@@ -34,12 +41,6 @@ export default function IntegrateAnimation({
 }: IntegrateProps) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-
-  const platforms = platformPositions.map((pos, i) => ({
-    ...pos,
-    label: platformLabels[i]?.label ?? defaultPlatforms[i].label,
-    icon: platformLabels[i]?.icon ?? defaultPlatforms[i].icon,
-  }));
 
   const gearRotation = frame * 2;
   const pulsePhase = (frame - 100) * 0.1;
@@ -59,20 +60,21 @@ export default function IntegrateAnimation({
         overflow: "hidden",
       }}
     >
-      <svg viewBox="0 0 960 600" width="100%" height="100%">
-        {/* Connection lines */}
-        {platforms.map((p, i) => {
-          const lineProgress = interpolate(
-            frame,
-            [30 + i * 8, 60 + i * 8],
-            [0, 1],
-            { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
-          );
-          const px = interpolate(frame, [0, 30 + i * 8], [p.x, p.finalX], {
+      <svg viewBox="0 0 960 560" width="100%" height="100%">
+        {/* Connection lines + data flow dots */}
+        {finalPositions.map((fp, i) => {
+          const ip = initialPositions[i];
+          const moveDelay = 20 + i * 6;
+          const lineDelay = 40 + i * 6;
+          const px = interpolate(frame, [0, moveDelay, moveDelay + 20], [ip.x, ip.x, fp.x], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
           });
-          const py = interpolate(frame, [0, 30 + i * 8], [p.y, p.finalY], {
+          const py = interpolate(frame, [0, moveDelay, moveDelay + 20], [ip.y, ip.y, fp.y], {
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          });
+          const lineProgress = interpolate(frame, [lineDelay, lineDelay + 20], [0, 1], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
           });
@@ -87,14 +89,14 @@ export default function IntegrateAnimation({
                 x2={cx + (HUB_X - cx) * lineProgress}
                 y2={cy + (HUB_Y - cy) * lineProgress}
                 stroke="#22c55e"
-                strokeWidth="3"
+                strokeWidth="2.5"
                 opacity={lineProgress * 0.5}
               />
-              {frame > 100 && lineProgress > 0.9 && (
+              {frame > 105 && lineProgress > 0.9 && (
                 <circle
-                  cx={cx + (HUB_X - cx) * ((Math.sin(frame * 0.08 + i * 1.5) + 1) / 2)}
-                  cy={cy + (HUB_Y - cy) * ((Math.sin(frame * 0.08 + i * 1.5) + 1) / 2)}
-                  r="6"
+                  cx={cx + (HUB_X - cx) * ((Math.sin(frame * 0.07 + i * 1.2) + 1) / 2)}
+                  cy={cy + (HUB_Y - cy) * ((Math.sin(frame * 0.07 + i * 1.2) + 1) / 2)}
+                  r="5"
                   fill="#22c55e"
                   opacity={pulseOpacity}
                 />
@@ -103,22 +105,25 @@ export default function IntegrateAnimation({
           );
         })}
 
-        {/* Platform nodes */}
-        {platforms.map((p, i) => {
+        {/* Platform nodes — text only, no emojis */}
+        {finalPositions.map((fp, i) => {
+          const ip = initialPositions[i];
+          const moveDelay = 20 + i * 6;
           const nodeScale = spring({
-            frame: frame - i * 5,
+            frame: frame - i * 4,
             fps,
             config: { damping: 12, stiffness: 200 },
           });
-          const px = interpolate(frame, [0, 30 + i * 8], [p.x, p.finalX], {
+          const px = interpolate(frame, [0, moveDelay, moveDelay + 20], [ip.x, ip.x, fp.x], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
           });
-          const py = interpolate(frame, [0, 30 + i * 8], [p.y, p.finalY], {
+          const py = interpolate(frame, [0, moveDelay, moveDelay + 20], [ip.y, ip.y, fp.y], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
           });
-          const isConnected = frame > 60 + i * 8;
+          const isConnected = frame > 60 + i * 6;
+          const label = platformLabels[i] ?? defaultPlatforms[i];
 
           return (
             <g
@@ -128,28 +133,20 @@ export default function IntegrateAnimation({
               <rect
                 width={NODE_W}
                 height={NODE_H}
-                rx="16"
+                rx="12"
                 fill="white"
                 stroke={isConnected ? "#22c55e" : "#cbd5e1"}
-                strokeWidth={isConnected ? "3" : "2"}
+                strokeWidth={isConnected ? "2.5" : "1.5"}
               />
               <text
                 x={NODE_W / 2}
-                y={34}
-                textAnchor="middle"
-                fontSize="30"
-              >
-                {p.icon}
-              </text>
-              <text
-                x={NODE_W / 2}
-                y={64}
+                y={NODE_H / 2 + 7}
                 textAnchor="middle"
                 fontSize="20"
                 fontWeight="600"
-                fill="#334155"
+                fill={isConnected ? "#0f172a" : "#64748b"}
               >
-                {p.label}
+                {label}
               </text>
             </g>
           );
@@ -157,55 +154,55 @@ export default function IntegrateAnimation({
 
         {/* Central hub */}
         <g transform={`translate(${HUB_X}, ${HUB_Y})`}>
-          <circle r="155" fill="#22c55e" opacity={glowOpacity * 0.1} />
-          <circle r="135" fill="#22c55e" opacity={glowOpacity * 0.08} />
+          <circle r="150" fill="#22c55e" opacity={glowOpacity * 0.08} />
+          <circle r="130" fill="#22c55e" opacity={glowOpacity * 0.12} />
           <circle
-            r="115"
+            r="110"
             fill="white"
             stroke="#22c55e"
-            strokeWidth="5"
+            strokeWidth="4"
             opacity={spring({
-              frame: frame - 25,
+              frame: frame - 15,
               fps,
               config: { damping: 15, stiffness: 150 },
             })}
           />
 
-          {/* Gear */}
-          {frame > 65 && (
+          {/* Gear — shifted up to visually center with label below */}
+          {frame > 60 && (
             <g
-              transform={`rotate(${gearRotation})`}
-              opacity={interpolate(frame, [65, 80], [0, 1], {
+              transform={`translate(0, -18) rotate(${gearRotation})`}
+              opacity={interpolate(frame, [60, 80], [0, 1], {
                 extrapolateLeft: "clamp",
                 extrapolateRight: "clamp",
               })}
             >
-              <circle r="48" fill="#22c55e" opacity="0.2" />
-              {[0, 60, 120, 180, 240, 300].map((angle) => (
+              <circle r="26" fill="#22c55e" opacity="0.15" />
+              {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
                 <rect
                   key={angle}
-                  x="-10"
-                  y="-58"
-                  width="20"
-                  height="20"
-                  rx="5"
+                  x="-5"
+                  y="-34"
+                  width="10"
+                  height="10"
+                  rx="2.5"
                   fill="#22c55e"
                   transform={`rotate(${angle})`}
                 />
               ))}
-              <circle r="22" fill="#22c55e" />
-              <circle r="10" fill="white" />
+              <circle r="13" fill="#22c55e" />
+              <circle r="6" fill="white" />
             </g>
           )}
 
           {/* Hub label */}
           <text
-            y={82}
+            y={48}
             textAnchor="middle"
-            fontSize="28"
+            fontSize="24"
             fontWeight="700"
             fill="#22c55e"
-            opacity={interpolate(frame, [70, 85], [0, 1], {
+            opacity={interpolate(frame, [65, 80], [0, 1], {
               extrapolateLeft: "clamp",
               extrapolateRight: "clamp",
             })}
@@ -217,7 +214,7 @@ export default function IntegrateAnimation({
         {/* Final badge */}
         {frame > 130 && (
           <g
-            transform={`translate(${HUB_X}, 540) scale(${Math.min(
+            transform={`translate(${HUB_X}, 555) scale(${Math.min(
               spring({
                 frame: frame - 130,
                 fps,
@@ -226,21 +223,8 @@ export default function IntegrateAnimation({
               1
             )})`}
           >
-            <rect
-              x="-130"
-              y="-28"
-              width="260"
-              height="56"
-              rx="28"
-              fill="#22c55e"
-            />
-            <text
-              textAnchor="middle"
-              y="8"
-              fontSize="24"
-              fontWeight="700"
-              fill="white"
-            >
+            <rect x="-130" y="-26" width="260" height="52" rx="26" fill="#22c55e" />
+            <text textAnchor="middle" y="7" fontSize="22" fontWeight="700" fill="white">
               {badge}
             </text>
           </g>

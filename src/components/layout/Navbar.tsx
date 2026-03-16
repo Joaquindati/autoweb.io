@@ -145,7 +145,7 @@ export default function Navbar() {
             )}
           </div>
 
-          <Button href="#contact" size="sm">
+          <Button href="https://wa.me/543416446621" target="_blank" rel="noopener noreferrer" size="sm">
             {t("getStarted")}
           </Button>
         </div>
@@ -196,7 +196,7 @@ export default function Navbar() {
                 ))}
               </motion.div>
               <motion.div className="mt-4" variants={mobileLinkVariants}>
-                <Button href="#contact" className="w-full">
+                <Button href="https://wa.me/543416446621" target="_blank" rel="noopener noreferrer" className="w-full">
                   {t("getStarted")}
                 </Button>
               </motion.div>

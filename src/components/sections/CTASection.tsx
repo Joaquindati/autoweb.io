@@ -84,7 +84,7 @@ export default function CTASection() {
             whileTap={{ scale: 0.98 }}
             className="inline-block"
           >
-            <Button variant="white" size="lg" href="#contact">
+            <Button variant="white" size="lg" href="https://wa.me/543416446621" target="_blank" rel="noopener noreferrer">
               {t("button")}
             </Button>
           </motion.div>
