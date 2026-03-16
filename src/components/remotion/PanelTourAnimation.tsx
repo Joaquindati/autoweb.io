@@ -138,12 +138,17 @@ export default function PanelTourAnimation({ scenes: scenesProp }: PanelTourProp
         if (titleOp <= 0 && subtitleOp <= 0) return null;
         return (
           <g key={`text-${i}`}>
-            <rect x={470} y={8} width={460} height={58} rx={12} fill="white" opacity={titleOp * 0.92} />
-            <rect x={470} y={8} width={460} height={58} rx={12} fill="none" stroke="#e2e8f0" strokeWidth={1} opacity={titleOp * 0.5} />
-            <text x={700} y={33} textAnchor="middle" fontSize={20} fontWeight={700} fill="#0f172a" opacity={titleOp}>
+            {/* Background pill */}
+            <rect x={350} y={4} width={700} height={72} rx={18} fill="white" opacity={titleOp * 0.95} />
+            <rect x={350} y={4} width={700} height={72} rx={18} fill="none" stroke="#22c55e" strokeWidth={1.5} opacity={titleOp * 0.3} />
+            {/* Green accent bar */}
+            <rect x={370} y={20} width={4} height={38} rx={2} fill="#22c55e" opacity={titleOp} />
+            {/* Title */}
+            <text x={388} y={38} fontSize={22} fontWeight={700} fill="#0f172a" opacity={titleOp}>
               {scene.title}
             </text>
-            <text x={700} y={54} textAnchor="middle" fontSize={13} fill="#64748b" opacity={subtitleOp}>
+            {/* Subtitle */}
+            <text x={388} y={60} fontSize={14} fill="#64748b" opacity={subtitleOp}>
               {scene.subtitle}
             </text>
           </g>

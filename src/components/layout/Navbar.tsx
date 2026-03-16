@@ -89,7 +89,7 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
         <motion.a
-          href="#"
+          href={`/${locale}`}
           className="font-heading text-xl font-bold text-neutral-900"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
