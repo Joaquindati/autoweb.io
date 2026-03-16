@@ -70,7 +70,7 @@ export default function PanelPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-8"
             >
-              <Button href={`/${locale}/dashboard`} size="lg">
+              <Button href={`/${locale}/dashboard/demo`} size="lg">
                 {t("demoBtn")} <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </motion.div>

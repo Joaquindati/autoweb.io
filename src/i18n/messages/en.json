@@ -171,6 +171,13 @@
     "demoBtn": "Try the Demo Panel"
   },
   "dashboard": {
+    "loginTitle": "Access Your Panel",
+    "email": "Email",
+    "password": "Password",
+    "loginBtn": "Sign In",
+    "or": "or",
+    "demoBtn": "Example Dashboard",
+    "comingSoon": "Coming soon",
     "overview": "Overview",
     "monitor": "Monitor",
     "progress": "Progress",

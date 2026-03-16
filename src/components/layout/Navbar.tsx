@@ -157,6 +157,12 @@ export default function Navbar() {
             )}
           </div>
 
+          <a
+            href={`/${locale}/dashboard`}
+            className="text-sm font-medium text-neutral-700 hover:text-primary transition-colors"
+          >
+            Dashboard
+          </a>
           <Button href="https://wa.me/543416446621" size="sm">
             {t("getStarted")}
           </Button>
@@ -213,6 +219,14 @@ export default function Navbar() {
                   </button>
                 ))}
               </motion.div>
+              <motion.a
+                href={`/${locale}/dashboard`}
+                onClick={() => setIsMobileOpen(false)}
+                className="text-lg font-medium text-neutral-700 hover:text-primary py-2"
+                variants={mobileLinkVariants}
+              >
+                Dashboard
+              </motion.a>
               <motion.div className="mt-4" variants={mobileLinkVariants}>
                 <Button href="https://wa.me/543416446621" className="w-full">
                   {t("getStarted")}

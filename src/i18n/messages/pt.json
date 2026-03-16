@@ -171,6 +171,13 @@
     "demoBtn": "Experimente o Painel Demo"
   },
   "dashboard": {
+    "loginTitle": "Acesse seu Painel",
+    "email": "Email",
+    "password": "Senha",
+    "loginBtn": "Entrar",
+    "or": "ou",
+    "demoBtn": "Dashboard de Exemplo",
+    "comingSoon": "Em breve",
     "overview": "Visão Geral",
     "monitor": "Monitor",
     "progress": "Progresso",
