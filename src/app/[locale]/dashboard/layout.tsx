@@ -67,7 +67,7 @@ export default function DashboardLayout({
         {/* Logo */}
         <div className="flex items-center gap-2 px-6 py-6">
           <span className="h-3 w-3 rounded-full bg-primary" />
-          <span className="text-lg font-bold text-white">Autoweb</span>
+          <span className="text-lg font-bold font-heading text-white">Autoweb</span>
         </div>
 
         {/* Nav links */}
@@ -80,9 +80,9 @@ export default function DashboardLayout({
                 key={link.href}
                 href={link.href}
                 onClick={() => setSidebarOpen(false)}
-                className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+                className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors ${
                   active
-                    ? "bg-primary/20 text-primary"
+                    ? "bg-primary text-white"
                     : "text-neutral-300 hover:bg-neutral-800 hover:text-white"
                 }`}
               >
@@ -96,9 +96,10 @@ export default function DashboardLayout({
 
       {/* Back to site */}
       <div className="px-3 pb-6">
+        <div className="border-t border-neutral-800 my-4" />
         <Link
           href={`/${locale}`}
-          className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-neutral-300 transition-colors hover:bg-neutral-800 hover:text-white"
+          className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-neutral-300 transition-colors hover:bg-neutral-800 hover:text-white"
         >
           <ArrowLeft className="h-5 w-5" />
           {t("backToSite")}
@@ -108,9 +109,9 @@ export default function DashboardLayout({
   );
 
   return (
-    <div className="min-h-screen bg-neutral-100">
+    <div className="min-h-screen bg-neutral-50">
       {/* Desktop sidebar */}
-      <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 bg-neutral-900 text-white md:block">
+      <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 bg-gradient-to-b from-neutral-900 to-[#0a0f1a] text-white md:block">
         {sidebarContent}
       </aside>
 
@@ -124,14 +125,14 @@ export default function DashboardLayout({
 
       {/* Mobile sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-60 bg-neutral-900 text-white transition-transform duration-300 md:hidden ${
+        className={`fixed inset-y-0 left-0 z-50 w-60 bg-gradient-to-b from-neutral-900 to-[#0a0f1a] text-white transition-transform duration-300 md:hidden ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex justify-end px-4 pt-4">
           <button
             onClick={() => setSidebarOpen(false)}
-            className="rounded-lg p-1 text-neutral-300 hover:bg-neutral-800 hover:text-white"
+            className="rounded-xl p-1 text-neutral-300 hover:bg-neutral-800 hover:text-white"
           >
             <X className="h-5 w-5" />
           </button>
@@ -145,7 +146,7 @@ export default function DashboardLayout({
         <div className="flex items-center gap-3 px-4 pt-4 md:hidden">
           <button
             onClick={() => setSidebarOpen(true)}
-            className="rounded-lg border border-neutral-200 bg-white p-2 shadow-sm"
+            className="rounded-xl border border-neutral-200 bg-white p-2 shadow-sm"
           >
             <Menu className="h-5 w-5 text-neutral-700" />
           </button>

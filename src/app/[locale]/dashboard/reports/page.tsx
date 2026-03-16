@@ -32,7 +32,7 @@ export default function ReportsPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold text-neutral-900">
+      <h1 className="mb-6 text-3xl font-bold font-heading text-neutral-900">
         {t("reports")}
       </h1>
 
@@ -40,11 +40,11 @@ export default function ReportsPage() {
         {reports.map((report) => (
           <div
             key={report.titleKey}
-            className="flex flex-col gap-4 rounded-xl border border-neutral-200 bg-white p-6 shadow-sm"
+            className="flex flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
           >
             {/* Icon */}
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-100">
-              <FileText className="h-6 w-6 text-neutral-500" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-light">
+              <FileText className="h-6 w-6 text-primary" />
             </div>
 
             {/* Title + Badge */}
@@ -65,7 +65,7 @@ export default function ReportsPage() {
             </p>
 
             {/* Action button */}
-            <button className="mt-auto rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-dark">
+            <button className="mt-auto rounded-full bg-primary px-4 py-2 text-sm font-medium text-white shadow-lg shadow-primary/25 transition-colors hover:bg-primary-dark hover:shadow-primary/40">
               {report.action === "download" ? t("download") : t("send")}
             </button>
           </div>

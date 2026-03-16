@@ -35,14 +35,14 @@ export default function AnalyticsPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold text-neutral-900">
+      <h1 className="mb-6 text-3xl font-bold font-heading text-neutral-900">
         {t("analytics")}
       </h1>
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Card 1: Bar chart */}
-        <div className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-base font-semibold text-neutral-900">
+        <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+          <h2 className="mb-4 text-base font-semibold font-heading text-neutral-900">
             Monthly Performance
           </h2>
           <svg viewBox="0 0 400 220" className="w-full">
@@ -85,8 +85,8 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Card 2: Line chart */}
-        <div className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-base font-semibold text-neutral-900">
+        <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+          <h2 className="mb-4 text-base font-semibold font-heading text-neutral-900">
             Trend
           </h2>
           <svg viewBox="0 0 400 200" className="w-full">
@@ -133,8 +133,8 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Card 3: Donut chart */}
-        <div className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-base font-semibold text-neutral-900">
+        <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+          <h2 className="mb-4 text-base font-semibold font-heading text-neutral-900">
             {t("successRate")}
           </h2>
           <div className="flex items-center justify-center">
@@ -186,23 +186,23 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Card 4: KPI mini cards */}
-        <div className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-base font-semibold text-neutral-900">
+        <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+          <h2 className="mb-4 text-base font-semibold font-heading text-neutral-900">
             Key Metrics
           </h2>
           <div className="flex flex-col gap-4">
             {/* Efficiency */}
-            <div className="rounded-lg border border-neutral-100 bg-neutral-50 p-4">
+            <div className="rounded-xl border border-primary-light bg-primary-50 p-4">
               <p className="text-sm text-neutral-500">{t("efficiency")}</p>
-              <p className="text-2xl font-bold text-green-600">+42%</p>
+              <p className="text-2xl font-bold text-primary">+42%</p>
             </div>
             {/* Time Saved */}
-            <div className="rounded-lg border border-neutral-100 bg-neutral-50 p-4">
+            <div className="rounded-xl border border-primary-light bg-primary-50 p-4">
               <p className="text-sm text-neutral-500">{t("timeSaved")}</p>
-              <p className="text-2xl font-bold text-green-600">-65%</p>
+              <p className="text-2xl font-bold text-primary">-65%</p>
             </div>
             {/* ROI */}
-            <div className="rounded-lg border border-neutral-100 bg-neutral-50 p-4">
+            <div className="rounded-xl border border-primary-light bg-primary-50 p-4">
               <p className="text-sm text-neutral-500">{t("roi")}</p>
               <p className="text-2xl font-bold text-neutral-900">3.2x</p>
             </div>

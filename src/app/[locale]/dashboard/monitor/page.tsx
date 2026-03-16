@@ -61,11 +61,11 @@ export default function MonitorPage() {
         }
       `}</style>
 
-      <h1 className="mb-6 text-2xl font-bold text-neutral-900">
+      <h1 className="mb-6 text-3xl font-bold font-heading text-neutral-900">
         {t("monitor")}
       </h1>
 
-      <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white p-6 shadow-sm">
+      <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
         <table className="w-full text-left text-sm">
           <thead>
             <tr className="border-b border-neutral-200">
@@ -88,7 +88,7 @@ export default function MonitorPage() {
               <tr key={row.name} className="hover:bg-neutral-50">
                 <td className="py-4 pr-4">
                   <span
-                    className={`inline-block h-3 w-3 rounded-full ${statusDotClass(row.status)}`}
+                    className={`inline-block h-3.5 w-3.5 rounded-full ${statusDotClass(row.status)}`}
                   />
                 </td>
                 <td className="py-4 pr-4 font-medium text-neutral-900">

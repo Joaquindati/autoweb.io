@@ -53,7 +53,7 @@ export default function ProgressPage() {
         }
       `}</style>
 
-      <h1 className="mb-6 text-2xl font-bold text-neutral-900">
+      <h1 className="mb-6 text-3xl font-bold font-heading text-neutral-900">
         {t("projectProgress")}
       </h1>
 
@@ -65,13 +65,13 @@ export default function ProgressPage() {
           </span>
           <span className="text-sm font-semibold text-primary">65%</span>
         </div>
-        <div className="h-4 w-full overflow-hidden rounded-full bg-neutral-200">
-          <div className="h-full w-[65%] rounded-full bg-primary transition-all duration-500" />
+        <div className="h-5 w-full overflow-hidden rounded-full bg-neutral-200">
+          <div className="h-full w-[65%] rounded-full bg-gradient-to-r from-primary to-primary-dark transition-all duration-500" />
         </div>
       </div>
 
       {/* Timeline */}
-      <div className="mb-10 rounded-xl border border-neutral-200 bg-white p-6 shadow-sm">
+      <div className="mb-10 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
         <div className="grid grid-cols-4 gap-0">
           {phases.map((phase, i) => (
             <div key={phase.key} className="relative flex flex-col items-center">
@@ -89,7 +89,7 @@ export default function ProgressPage() {
               {/* Circle */}
               <div className="relative z-10">
                 {phase.status === "completed" ? (
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary">
                     <svg
                       className="h-5 w-5 text-white"
                       fill="none"
@@ -106,20 +106,20 @@ export default function ProgressPage() {
                   </div>
                 ) : phase.status === "inProgress" ? (
                   <div
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-primary"
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-primary"
                     style={{ animation: "pulse-ring 2s ease-in-out infinite" }}
                   >
                     <div className="h-4 w-4 rounded-full bg-white" />
                   </div>
                 ) : (
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200 text-sm font-bold text-neutral-500">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-200 text-sm font-bold text-neutral-500">
                     {phase.step}
                   </div>
                 )}
               </div>
 
               {/* Label */}
-              <p className="mt-3 text-sm font-medium text-neutral-900">
+              <p className="mt-3 text-sm font-medium font-heading text-neutral-900">
                 {t(phase.key)}
               </p>
 
@@ -131,8 +131,8 @@ export default function ProgressPage() {
       </div>
 
       {/* Deliverables */}
-      <div className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm">
-        <h2 className="mb-4 text-lg font-semibold text-neutral-900">
+      <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+        <h2 className="mb-4 text-lg font-semibold font-heading text-neutral-900">
           {t("deliverables")}
         </h2>
         <ul className="space-y-3">

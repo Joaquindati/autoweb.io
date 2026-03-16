@@ -56,7 +56,7 @@ export default function DashboardOverviewPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold text-neutral-900">
+      <h1 className="mb-6 text-3xl font-bold font-heading text-neutral-900">
         {t("overview")}
       </h1>
 
@@ -67,29 +67,29 @@ export default function DashboardOverviewPage() {
           return (
             <div
               key={kpi.key}
-              className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <div
-                className={`mb-4 flex h-12 w-12 items-center justify-center rounded-full ${kpi.iconBg}`}
+                className={`mb-4 flex h-14 w-14 items-center justify-center rounded-full ${kpi.iconBg}`}
               >
                 <Icon className={`h-6 w-6 ${kpi.iconColor}`} />
               </div>
               <p className="text-sm text-neutral-500">{t(kpi.key)}</p>
-              <p className="text-3xl font-bold text-neutral-900">{kpi.value}</p>
+              <p className="text-4xl font-bold text-neutral-900">{kpi.value}</p>
             </div>
           );
         })}
       </div>
 
       {/* Recent Activity */}
-      <h2 className="mb-4 mt-10 text-lg font-semibold text-neutral-900">
+      <h2 className="mb-4 mt-10 text-xl font-semibold font-heading text-neutral-900">
         {t("recentActivity")}
       </h2>
 
-      <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
+      <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
         <table className="w-full text-left text-sm">
           <thead>
-            <tr className="border-b border-neutral-200 bg-neutral-50">
+            <tr className="border-b border-neutral-200 bg-primary-50">
               <th className="px-6 py-3 font-medium text-neutral-500">
                 {t("name")}
               </th>
