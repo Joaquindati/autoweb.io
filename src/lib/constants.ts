@@ -32,7 +32,7 @@ export const FOOTER_COMPANY = [
 ];
 
 export const FOOTER_LEGAL = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
-  { label: "Cookie Policy", href: "#" },
+  { label: "Privacy Policy", href: "/legal/privacy" },
+  { label: "Terms of Service", href: "/legal/terms" },
+  { label: "Cookie Policy", href: "/legal/cookies" },
 ];

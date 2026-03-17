@@ -212,10 +212,227 @@
     "download": "Download",
     "send": "Send",
     "lastSent": "Last sent",
-    "daysAgo": "days ago"
+    "daysAgo": "days ago",
+    "events": "Events",
+    "eventsNearYou": "Events near you",
+    "eventsDescription": "Discover automation and AI events near your location",
+    "loadingLocation": "Detecting location...",
+    "locationDenied": "Location unavailable. Showing default location.",
+    "upcomingEvents": "Upcoming events",
+    "viewOnMap": "View on map",
+    "workshop": "Workshop",
+    "meetup": "Meetup",
+    "conference": "Conference",
+    "webinar": "Webinar",
+    "event1": "AI Automation Workshop",
+    "event2": "No-Code & Automation Meetup",
+    "event3": "Digital Transformation Conference",
+    "event4": "Webinar: Advanced API Integrations",
+    "event5": "Real-Time Dashboards Workshop",
+    "event6": "Data Engineering Meetup",
+    "event7": "Business Intelligence Conference",
+    "event8": "Workflow Optimization Workshop",
+    "locationPromptTitle": "See events near you",
+    "locationPromptDescription": "Your location is only used to center the map and is never stored or sent to our servers.",
+    "enableLocation": "Enable Location",
+    "skipLocation": "Skip"
   },
   "metadata": {
     "title": "Automatika | Custom Automation Services",
     "description": "We study your operation, integrate custom solutions and analyze the results. Automation that truly works for your business."
+  },
+  "cookieConsent": {
+    "message": "We use essential cookies to ensure our website works properly.",
+    "learnMore": "Learn more",
+    "accept": "Accept",
+    "reject": "Reject"
+  },
+  "legal": {
+    "lastUpdated": "Last updated: March 2026",
+    "privacy": {
+      "title": "Privacy Policy",
+      "metaDescription": "Automatika's privacy policy. Learn how we handle your personal data.",
+      "sections": [
+        {
+          "heading": "1. Data Controller",
+          "paragraphs": [
+            "Automatika (hereinafter \"we\" or \"the Company\"), located in Rosario, Province of Santa Fe, Argentine Republic, is the data controller for personal data collected through the website automatika.studio.",
+            "Contact: WhatsApp +54 341 644 6621."
+          ]
+        },
+        {
+          "heading": "2. Data We Collect",
+          "paragraphs": [
+            "Our website is designed to minimize personal data collection. We currently do not collect data through registration forms, login, or newsletter subscriptions.",
+            "Geolocation: Our demo events page may request your location through your browser. This information is used exclusively on the client side to center the map and is never stored, transmitted, or sent to our servers.",
+            "WhatsApp: When you click our contact links, you will be redirected to WhatsApp, a platform operated by Meta Platforms, Inc. Communication through WhatsApp is subject to their own terms and privacy policy."
+          ]
+        },
+        {
+          "heading": "3. Legal Basis for Processing",
+          "paragraphs": [
+            "Consent: Geolocation is only activated with your explicit authorization through your browser.",
+            "Legitimate interest: Basic operation and security of the website."
+          ]
+        },
+        {
+          "heading": "4. Cookies and Tracking Technologies",
+          "paragraphs": [
+            "We do not use analytics, advertising, or marketing cookies. For more details, see our Cookie Policy.",
+            "Our hosting provider (Vercel) may set technical cookies necessary for the operation of the site. Next.js may set a NEXT_LOCALE cookie to remember your language preference."
+          ]
+        },
+        {
+          "heading": "5. Third-Party Services",
+          "paragraphs": [
+            "Vercel Inc.: Website hosting. Servers located in the United States. Subject to their privacy policy.",
+            "OpenStreetMap: Tile provider for the events map in the demo section."
+          ]
+        },
+        {
+          "heading": "6. Data Retention",
+          "paragraphs": [
+            "We do not store personal data from website visitors. Geolocation is processed exclusively in your browser and is not saved on any server."
+          ]
+        },
+        {
+          "heading": "7. Your Rights (Argentine Law 25,326)",
+          "paragraphs": [
+            "Under the Argentine Personal Data Protection Law No. 25,326, you have the right to:",
+            "Access: Request information about your personal data in our databases. Rectification: Correct inaccurate or incomplete data. Deletion: Request the removal of your personal data. Blocking: Request the blocking of your data in certain circumstances.",
+            "The Agency for Access to Public Information (AAIP) is the supervisory authority for Law 25,326. You can contact them at www.argentina.gob.ar/aaip."
+          ]
+        },
+        {
+          "heading": "8. Rights for European Union Visitors (GDPR)",
+          "paragraphs": [
+            "If you access our site from the European Union, you also have the right to: access, rectification, erasure, restriction of processing, data portability, and objection to processing."
+          ]
+        },
+        {
+          "heading": "9. International Transfers",
+          "paragraphs": [
+            "Our website is hosted on Vercel servers in the United States. When accessing the site, certain technical data (such as your IP address) may be processed in that jurisdiction."
+          ]
+        },
+        {
+          "heading": "10. Children",
+          "paragraphs": [
+            "Our site is not directed at children and we do not intentionally collect data from minors."
+          ]
+        },
+        {
+          "heading": "11. Changes",
+          "paragraphs": [
+            "We reserve the right to update this policy. Changes will be posted on this page with the last updated date."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "metaDescription": "Terms and conditions for using the Automatika website.",
+      "sections": [
+        {
+          "heading": "1. Acceptance of Terms",
+          "paragraphs": [
+            "By accessing and using the website automatika.studio (hereinafter \"the Site\"), you agree to these Terms of Service. If you do not agree with any of these terms, please do not use the Site."
+          ]
+        },
+        {
+          "heading": "2. Description of Service",
+          "paragraphs": [
+            "Automatika is a B2B consulting company specializing in business process automation, system integrations, and custom dashboards. The Site is informational and for marketing purposes."
+          ]
+        },
+        {
+          "heading": "3. Demo Dashboard",
+          "paragraphs": [
+            "The Site includes a demo dashboard provided \"as is\" for illustrative purposes. The data displayed is fictitious and for example only. The demo dashboard does not constitute a real service or productive tool."
+          ]
+        },
+        {
+          "heading": "4. Pricing and Engagement",
+          "paragraphs": [
+            "Prices displayed on the Site are indicative and subject to change without prior notice. Final pricing is confirmed in individual agreements with each client. Service engagement is formalized through a separate agreement."
+          ]
+        },
+        {
+          "heading": "5. Intellectual Property",
+          "paragraphs": [
+            "All content on the Site, including text, designs, logos, graphics, animations, and source code, is the property of Automatika or its licensors and is protected by intellectual property laws of the Argentine Republic and international treaties."
+          ]
+        },
+        {
+          "heading": "6. External Links",
+          "paragraphs": [
+            "The Site may contain links to third-party platforms, such as WhatsApp (Meta Platforms, Inc.). We are not responsible for the content, policies, or practices of these external services."
+          ]
+        },
+        {
+          "heading": "7. Limitation of Liability",
+          "paragraphs": [
+            "The Site is provided \"as is\" and \"as available.\" We do not guarantee that the Site will be free of errors or interruptions. To the fullest extent permitted by law, Automatika shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of the Site."
+          ]
+        },
+        {
+          "heading": "8. Governing Law and Jurisdiction",
+          "paragraphs": [
+            "These terms are governed by the laws of the Argentine Republic. For any dispute arising from the use of the Site, the parties submit to the jurisdiction of the ordinary courts of the city of Rosario, Province of Santa Fe."
+          ]
+        },
+        {
+          "heading": "9. Modifications",
+          "paragraphs": [
+            "We reserve the right to modify these terms at any time. Changes will be effective upon publication on this page."
+          ]
+        },
+        {
+          "heading": "10. Contact",
+          "paragraphs": [
+            "For questions about these terms, you can contact us via WhatsApp: +54 341 644 6621."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "metaDescription": "Automatika's cookie policy. Information about how we use cookies on our site.",
+      "sections": [
+        {
+          "heading": "1. What Are Cookies?",
+          "paragraphs": [
+            "Cookies are small text files that websites store on your device. They are used to improve the user experience and site functionality."
+          ]
+        },
+        {
+          "heading": "2. Cookies We Use",
+          "paragraphs": [
+            "Automatika minimizes cookie usage. We do not use analytics, advertising, marketing, or third-party tracking cookies.",
+            "Technical/necessary cookies: Our hosting provider (Vercel) may set technical cookies necessary for site delivery and security (e.g., __vercel_* cookies). Next.js may set a NEXT_LOCALE cookie to remember your language preference.",
+            "Consent preference: We store your cookie decision in your browser's local storage (localStorage) so we don't show the cookie notice again."
+          ]
+        },
+        {
+          "heading": "3. Third-Party Cookies",
+          "paragraphs": [
+            "We currently do not integrate analytics or advertising services that set third-party cookies. If we add such services in the future, we will update this policy and request your prior consent."
+          ]
+        },
+        {
+          "heading": "4. How to Manage Cookies",
+          "paragraphs": [
+            "You can manage or delete cookies through your browser settings. Please note that disabling certain cookies may affect site functionality.",
+            "Chrome: Settings > Privacy and security > Cookies. Firefox: Settings > Privacy & Security. Safari: Preferences > Privacy. Edge: Settings > Cookies and site permissions."
+          ]
+        },
+        {
+          "heading": "5. Changes",
+          "paragraphs": [
+            "We reserve the right to update this cookie policy. Changes will be posted on this page with the last updated date."
+          ]
+        }
+      ]
+    }
   }
 }

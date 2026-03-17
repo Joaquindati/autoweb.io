@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import {
-  LayoutDashboard, Activity, Map, BarChart3, FileText, ArrowLeft, Menu, X,
+  LayoutDashboard, Activity, MapPin, BarChart3, FileText, ArrowLeft, Menu, X,
 } from "lucide-react";
 
 export default function DemoLayout({ children }: { children: React.ReactNode }) {
@@ -18,7 +18,7 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
   const navLinks = [
     { label: t("overview"), href: base, icon: LayoutDashboard },
     { label: t("monitor"), href: `${base}/monitor`, icon: Activity },
-    { label: t("progress"), href: `${base}/progress`, icon: Map },
+    { label: t("events"), href: `${base}/events`, icon: MapPin },
     { label: t("analytics"), href: `${base}/analytics`, icon: BarChart3 },
     { label: t("reports"), href: `${base}/reports`, icon: FileText },
   ];

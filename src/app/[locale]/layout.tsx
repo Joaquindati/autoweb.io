@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import CookieConsent from "@/components/legal/CookieConsent";
 import "../globals.css";
 
 const inter = Inter({
@@ -75,6 +76,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className={`${inter.variable} ${poppins.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           {children}
+          <CookieConsent />
         </NextIntlClientProvider>
       </body>
     </html>

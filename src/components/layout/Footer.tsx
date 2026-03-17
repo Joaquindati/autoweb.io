@@ -1,13 +1,16 @@
 "use client";
 
 import { Linkedin, Twitter, Instagram } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { SITE_NAME } from "@/lib/constants";
 
 const companyHrefs = ["#about", "#process-study", "#pricing", "#faq", "https://wa.me/543416446621"];
 
+const legalHrefs = ["/legal/privacy", "/legal/terms", "/legal/cookies"];
+
 export default function Footer() {
   const t = useTranslations("footer");
+  const locale = useLocale();
 
   const services = t.raw("services") as string[];
   const company = t.raw("company") as string[];
@@ -91,10 +94,10 @@ export default function Footer() {
               {t("legalTitle")}
             </h4>
             <ul className="space-y-3">
-              {legal.map((label) => (
+              {legal.map((label, i) => (
                 <li key={label}>
                   <a
-                    href="#"
+                    href={`/${locale}${legalHrefs[i]}`}
                     className="text-sm text-neutral-400 hover:text-primary transition-colors"
                   >
                     {label}
@@ -111,13 +114,13 @@ export default function Footer() {
           </p>
           <div className="flex gap-6">
             <a
-              href="#"
+              href={`/${locale}/legal/privacy`}
               className="text-sm text-neutral-500 hover:text-primary transition-colors"
             >
               {t("privacyPolicy")}
             </a>
             <a
-              href="#"
+              href={`/${locale}/legal/terms`}
               className="text-sm text-neutral-500 hover:text-primary transition-colors"
             >
               {t("termsConditions")}
