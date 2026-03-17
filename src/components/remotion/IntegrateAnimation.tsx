@@ -36,7 +36,7 @@ const initialPositions = [
 
 export default function IntegrateAnimation({
   platforms: platformLabels = defaultPlatforms,
-  hubLabel = "AUTOMATIK",
+  hubLabel = "AUTOMATIKA",
   badge = "All Connected \u2713",
 }: IntegrateProps) {
   const frame = useCurrentFrame();

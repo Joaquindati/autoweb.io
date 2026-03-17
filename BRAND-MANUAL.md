@@ -1,13 +1,13 @@
-# Autoweb — Manual de Marca
+# Automatika — Manual de Marca
 
 ---
 
 ## 1. Logo
 
-**Nombre**: Autoweb
+**Nombre**: Automatika
 **Formato**: Tipográfico (wordmark)
 **Fuente**: Poppins Bold
-**Acento**: Punto verde al final → `Autoweb.`
+**Acento**: Punto verde al final → `Automatika.`
 **Colores del logo**:
 - Texto: `#0f172a` (Neutral 900) sobre fondo claro
 - Texto: `#ffffff` sobre fondo oscuro

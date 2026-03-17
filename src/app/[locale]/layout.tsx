@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
+    metadataBase: new URL("https://automatika.studio"),
     title: t("title"),
     description: t("description"),
     openGraph: {
@@ -58,9 +59,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Automatik",
+    name: "Automatika",
     description: "Automation and reporting solutions for modern businesses.",
-    url: "https://automatik.app",
+    url: "https://automatika.studio",
   };
 
   return (

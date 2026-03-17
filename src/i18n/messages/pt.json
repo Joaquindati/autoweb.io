@@ -138,7 +138,7 @@
     },
     "integrate": {
       "platforms": ["CRM", "Email", "Banco Dados", "API", "Calendário", "Slack", "ERP", "Sheets"],
-      "hubLabel": "AUTOMATIK",
+      "hubLabel": "AUTOMATIKA",
       "badge": "Tudo Conectado ✓"
     },
     "analyze": {
@@ -215,7 +215,7 @@
     "daysAgo": "dias atrás"
   },
   "metadata": {
-    "title": "Automatik | Serviços de Automação Personalizada",
+    "title": "Automatika | Serviços de Automação Personalizada",
     "description": "Estudamos sua operação, integramos soluções sob medida e analisamos os resultados. Automação que realmente funciona para o seu negócio."
   }
 }

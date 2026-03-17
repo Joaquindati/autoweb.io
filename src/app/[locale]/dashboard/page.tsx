@@ -17,7 +17,7 @@ export default function DashboardLoginPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <a href={`/${locale}`} className="inline-block text-2xl font-bold font-heading text-neutral-900">
-            Automatik<span className="text-primary">.</span>
+            Automatika<span className="text-primary">.</span>
           </a>
         </div>
 
